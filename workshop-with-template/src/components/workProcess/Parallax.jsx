@@ -29,8 +29,7 @@ export default function Parallax() {
                     {/* ***** Mini Box Start ***** */}
                     <div className="row">
                         {parallaxItems.map(item => {
-
-                            return <ParallaxItem key={parallaxItems.indexOf(item)} title={item.title} content={item.content} />
+                            return <ParallaxItem key={item.title} title={item.title} content={item.content} />
                         })}
                     </div>
                     {/* ***** Mini Box End ***** */}
