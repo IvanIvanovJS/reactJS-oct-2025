@@ -4,601 +4,778 @@ function App() {
 
     return (
         <>
-            <main>
-                {/* <!-- ***** Preloader Start ***** --> */}
-                <div id="js-preloader" className="js-preloader">
-                    <div className="preloader-inner">
-                        <span className="dot"></span>
-                        <div className="dots">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
+            <>
+                {/* ***** Preloader Start ***** */}
+                <div id="preloader">
+                    <div className="jumper">
+                        <div />
+                        <div />
+                        <div />
                     </div>
                 </div>
-                {/* <!-- ***** Preloader End ***** --> */}
-
-                {/* <!-- ***** Header Area Start ***** --> */}
-                <header className="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+                {/* ***** Preloader End ***** */}
+                {/* ***** Header Area Start ***** */}
+                <header className="header-area header-sticky">
                     <div className="container">
                         <div className="row">
                             <div className="col-12">
                                 <nav className="main-nav">
-                                    {/* <!-- ***** Logo Start ***** --> */}
-                                    <a href="index.html" className="logo">
-                                        <h4>SEO Dream <img src="assets/images/logo-icon.png" alt=""></img></h4>
+                                    {/* ***** Logo Start ***** */}
+                                    <a href="#" className="logo">
+                                        <img src="assets/images/logo.png" alt="Softy Pinko" />
                                     </a>
-                                    {/* <!-- ***** Logo End ***** --> */}
-                                    {/* <!-- ***** Menu Start ***** --> */}
+                                    {/* ***** Logo End ***** */}
+                                    {/* ***** Menu Start ***** */}
                                     <ul className="nav">
-                                        <li className="scroll-to-section"><a href="#top" className="active">Home</a></li>
-                                        <li className="scroll-to-section"><a href="#features">Features</a></li>
-                                        <li className="scroll-to-section"><a href="#about">About Us</a></li>
-                                        <li className="scroll-to-section"><a href="#services">Services</a></li>
-                                        <li className="scroll-to-section"><a href="#portfolio">Portfolio</a></li>
-                                        <li className="scroll-to-section"><a href="#contact">Contact Us</a></li>
-                                        <li className="scroll-to-section"><div className="main-blue-button"><a href="#contact">Get Your Quote</a></div></li>
+                                        <li>
+                                            <a href="#welcome" className="active">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#features">About</a>
+                                        </li>
+                                        <li>
+                                            <a href="#work-process">Work Process</a>
+                                        </li>
+                                        <li>
+                                            <a href="#testimonials">Testimonials</a>
+                                        </li>
+                                        <li>
+                                            <a href="#pricing-plans">Pricing Tables</a>
+                                        </li>
+                                        <li>
+                                            <a href="#blog">Blog Entries</a>
+                                        </li>
+                                        <li>
+                                            <a href="#contact-us">Contact Us</a>
+                                        </li>
                                     </ul>
-                                    <a className='menu-trigger'>
+                                    <a className="menu-trigger">
                                         <span>Menu</span>
                                     </a>
-                                    {/* <!-- ***** Menu End ***** --> */}
+                                    {/* ***** Menu End ***** */}
                                 </nav>
                             </div>
                         </div>
                     </div>
                 </header>
-                {/* <!-- ***** Header Area End ***** --> */}
-
-                <div className="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+                {/* ***** Header Area End ***** */}
+                {/* ***** Welcome Area Start ***** */}
+                <div className="welcome-area" id="welcome">
+                    {/* ***** Header Text Start ***** */}
+                    <div className="header-text">
+                        <div className="container">
+                            <div className="row">
+                                <div className="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                                    <h1>
+                                        We provide the best <strong>strategy</strong>
+                                        <br />
+                                        to grow up your <strong>business</strong>
+                                    </h1>
+                                    <p>
+                                        Softy Pinko is a professional Bootstrap 4.0 theme designed by
+                                        Template Mo for your company at absolutely free of charge
+                                    </p>
+                                    <a href="#features" className="main-button-slider">
+                                        Discover More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* ***** Header Text End ***** */}
+                </div>
+                {/* ***** Welcome Area End ***** */}
+                {/* ***** Features Small Start ***** */}
+                <section className="section home-feature">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="row">
-                                    <div className="col-lg-6 align-self-center">
-                                        <div className="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
-                                            <div className="row">
-                                                <div className="col-lg-4 col-sm-4">
-                                                    <div className="info-stat">
-                                                        <h6>Agency Status:</h6>
-                                                        <h4>Ready Work</h4>
-                                                    </div>
-                                                </div>
-                                                <div className="col-lg-4 col-sm-4">
-                                                    <div className="info-stat">
-                                                        <h6>Price:</h6>
-                                                        <h4>$720/Month</h4>
-                                                    </div>
-                                                </div>
-                                                <div className="col-lg-4 col-sm-4">
-                                                    <div className="info-stat">
-                                                        <h6>Schedules</h6>
-                                                        <h4>$450/Meeting</h4>
-                                                    </div>
-                                                </div>
-                                                <div className="col-lg-12">
-                                                    <h2>SEO &amp; Digital Marketing Agency</h2>
-                                                </div>
-                                                <div className="col-lg-12">
-                                                    <div className="main-green-button scroll-to-section">
-                                                        <a href="#contact">Get Your Quote</a>
-                                                    </div>
-                                                </div>
+                                    {/* ***** Features Small Item Start ***** */}
+                                    <div
+                                        className="col-lg-4 col-md-6 col-sm-6 col-12"
+                                        data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s"
+                                    >
+                                        <div className="features-small-item">
+                                            <div className="icon">
+                                                <i>
+                                                    <img src="assets/images/featured-item-01.png" alt="" />
+                                                </i>
                                             </div>
+                                            <h5 className="features-title">Modern Strategy</h5>
+                                            <p>
+                                                Customize anything in this template to fit your website needs
+                                            </p>
                                         </div>
                                     </div>
-                                    <div className="col-lg-6">
-                                        <div className="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                                            <img src="assets/images/banner-right-image.png" alt=""></img>
+                                    {/* ***** Features Small Item End ***** */}
+                                    {/* ***** Features Small Item Start ***** */}
+                                    <div
+                                        className="col-lg-4 col-md-6 col-sm-6 col-12"
+                                        data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s"
+                                    >
+                                        <div className="features-small-item">
+                                            <div className="icon">
+                                                <i>
+                                                    <img src="assets/images/featured-item-01.png" alt="" />
+                                                </i>
+                                            </div>
+                                            <h5 className="features-title">Best Relationship</h5>
+                                            <p>Contact us immediately if you have a question in mind</p>
                                         </div>
                                     </div>
+                                    {/* ***** Features Small Item End ***** */}
+                                    {/* ***** Features Small Item Start ***** */}
+                                    <div
+                                        className="col-lg-4 col-md-6 col-sm-6 col-12"
+                                        data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s"
+                                    >
+                                        <div className="features-small-item">
+                                            <div className="icon">
+                                                <i>
+                                                    <img src="assets/images/featured-item-01.png" alt="" />
+                                                </i>
+                                            </div>
+                                            <h5 className="features-title">Ultimate Marketing</h5>
+                                            <p>
+                                                You just need to tell your friends about our free templates
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {/* ***** Features Small Item End ***** */}
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div id="features" className="features section">
+                </section>
+                {/* ***** Features Small End ***** */}
+                {/* ***** Features Big Item Start ***** */}
+                <section className="section padding-top-70 padding-bottom-0" id="features">
                     <div className="container">
+                        <div className="row">
+                            <div
+                                className="col-lg-5 col-md-12 col-sm-12 align-self-center"
+                                data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"
+                            >
+                                <img
+                                    src="assets/images/left-image.png"
+                                    className="rounded img-fluid d-block mx-auto"
+                                    alt="App"
+                                />
+                            </div>
+                            <div className="col-lg-1" />
+                            <div className="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-top-fix">
+                                <div className="left-heading">
+                                    <h2 className="section-title">Let’s discuss about you project</h2>
+                                </div>
+                                <div className="left-text">
+                                    <p>
+                                        Nullam sit amet purus libero. Etiam ullamcorper nisl ut augue
+                                        blandit, at finibus leo efficitur. Nam gravida purus non sapien
+                                        auctor, ut aliquam magna ullamcorper.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                         <div className="row">
                             <div className="col-lg-12">
-                                <div className="features-content">
-                                    <div className="row">
-                                        <div className="col-lg-3">
-                                            <div className="features-item first-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-                                                <div className="first-number number">
-                                                    <h6>01</h6>
-                                                </div>
-                                                <div className="icon"></div>
-                                                <h4>Reach Out</h4>
-                                                <div className="line-dec"></div>
-                                                <p>This HTML5 template is based on Bootstrap 5 CSS. You are free to customize anything.</p>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-3">
-                                            <div className="features-item second-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
-                                                <div className="second-number number">
-                                                    <h6>02</h6>
-                                                </div>
-                                                <div className="icon"></div>
-                                                <h4>Develop a Strategy</h4>
-                                                <div className="line-dec"></div>
-                                                <p>Lorem ipsum dolor sit ameter consectetur adipiscing li elit sed do eiusmod.</p>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-3">
-                                            <div className="features-item first-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
-                                                <div className="third-number number">
-                                                    <h6>03</h6>
-                                                </div>
-                                                <div className="icon"></div>
-                                                <h4>Implementation</h4>
-                                                <div className="line-dec"></div>
-                                                <p>If this template is useful for your website, please consider to <a rel="nofollow" href="https://www.paypal.me/templatemo" target="_blank">support us</a> a little.</p>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-3">
-                                            <div className="features-item second-feature last-features-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-                                                <div className="fourth-number number">
-                                                    <h6>04</h6>
-                                                </div>
-                                                <div className="icon"></div>
-                                                <h4>Analyze the result</h4>
-                                                <div className="line-dec"></div>
-                                                <p>Below circular progress bar animation supports those CSS values 10, 20, 30, till 100.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-12">
-                                <div className="skills-content">
-                                    <div className="row">
-                                        <div className="col-lg-3">
-                                            <div className="skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
-                                                <div className="progress" data-percentage="80">
-                                                    <span className="progress-left">
-                                                        <span className="progress-bar"></span>
-                                                    </span>
-                                                    <span className="progress-right">
-                                                        <span className="progress-bar"></span>
-                                                    </span>
-                                                    <div className="progress-value">
-                                                        <div>
-                                                            80%<br></br>
-                                                            <span>HTML/CSS/JS</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-3">
-                                            <div className="skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                                                <div className="progress" data-percentage="60">
-                                                    <span className="progress-left">
-                                                        <span className="progress-bar"></span>
-                                                    </span>
-                                                    <span className="progress-right">
-                                                        <span className="progress-bar"></span>
-                                                    </span>
-                                                    <div className="progress-value">
-                                                        <div>
-                                                            60%<br></br>
-                                                            <span>Wordpress</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-3">
-                                            <div className="skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                                                <div className="progress" data-percentage="90">
-                                                    <span className="progress-left">
-                                                        <span className="progress-bar"></span>
-                                                    </span>
-                                                    <span className="progress-right">
-                                                        <span className="progress-bar"></span>
-                                                    </span>
-                                                    <div className="progress-value">
-                                                        <div>
-                                                            90%<br></br>
-                                                            <span>Marketing</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-3">
-                                            <div className="skill-item last-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                                                <div className="progress" data-percentage="70">
-                                                    <span className="progress-left">
-                                                        <span className="progress-bar"></span>
-                                                    </span>
-                                                    <span className="progress-right">
-                                                        <span className="progress-bar"></span>
-                                                    </span>
-                                                    <div className="progress-value">
-                                                        <div>
-                                                            70%<br></br>
-                                                            <span>Photoshop</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div className="hr" />
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div id="about" className="about-us section">
+                </section>
+                {/* ***** Features Big Item End ***** */}
+                {/* ***** Features Big Item Start ***** */}
+                <section className="section padding-bottom-100">
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-6">
-                                <div className="left-image wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
-                                    <img src="assets/images/about-left-image.png" alt=""></img>
+                            <div className="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-bottom-fix">
+                                <div className="left-heading">
+                                    <h2 className="section-title">
+                                        We can help you to grow your business
+                                    </h2>
+                                </div>
+                                <div className="left-text">
+                                    <p>
+                                        Aenean pretium, ipsum et porttitor auctor, metus ipsum iaculis
+                                        nisi, a bibendum lectus libero vitae urna. Sed id leo eu dolor
+                                        luctus congue sed eget ipsum. Nunc nec luctus libero. Etiam quis
+                                        dolor elit.
+                                    </p>
                                 </div>
                             </div>
-                            <div className="col-lg-6 align-self-center wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                                <div className="section-heading">
-                                    <h6>About Us</h6>
-                                    <h2>Top <em>marketing</em> agency &amp; consult your website <span>with us</span></h2>
-                                </div>
-                                <div className="row">
-                                    <div className="col-lg-4 col-sm-4">
-                                        <div className="about-item">
-                                            <h4>750+</h4>
-                                            <h6>projects finished</h6>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-4 col-sm-4">
-                                        <div className="about-item">
-                                            <h4>340+</h4>
-                                            <h6>happy clients</h6>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-4 col-sm-4">
-                                        <div className="about-item">
-                                            <h4>128+</h4>
-                                            <h6>awards</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p><a rel="nofollow" href="https://templatemo.com/tm-563-seo-dream" target="_parent">SEO Dream</a> is free digital marketing CSS template provided by TemplateMo website. You are allowed to use this template for your business websites. Please DO NOT redistribute this template ZIP file on any Free CSS collection websites. You may contact us for more information. Thank you.</p>
-                                <div className="main-green-button"><a href="#">Discover company</a></div>
+                            <div className="col-lg-1" />
+                            <div
+                                className="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big"
+                                data-scroll-reveal="enter right move 30px over 0.6s after 0.4s"
+                            >
+                                <img
+                                    src="assets/images/right-image.png"
+                                    className="rounded img-fluid d-block mx-auto"
+                                    alt="App"
+                                />
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div id="services" className="our-services section">
+                </section>
+                {/* ***** Features Big Item End ***** */}
+                {/* ***** Home Parallax Start ***** */}
+                <section className="mini" id="work-process">
+                    <div className="mini-content">
+                        <div className="container">
+                            <div className="row">
+                                <div className="offset-lg-3 col-lg-6">
+                                    <div className="info">
+                                        <h1>Work Process</h1>
+                                        <p>
+                                            Aenean nec tempor metus. Maecenas ligula dolor, commodo in
+                                            imperdiet interdum, vehicula ut ex. Donec ante diam.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* ***** Mini Box Start ***** */}
+                            <div className="row">
+                                <div className="col-lg-2 col-md-3 col-sm-6 col-6">
+                                    <a href="#" className="mini-box">
+                                        <i>
+                                            <img src="assets/images/work-process-item-01.png" alt="" />
+                                        </i>
+                                        <strong>Get Ideas</strong>
+                                        <span>Godard pabst prism fam cliche.</span>
+                                    </a>
+                                </div>
+                                <div className="col-lg-2 col-md-3 col-sm-6 col-6">
+                                    <a href="#" className="mini-box">
+                                        <i>
+                                            <img src="assets/images/work-process-item-01.png" alt="" />
+                                        </i>
+                                        <strong>Sketch Up</strong>
+                                        <span>Godard pabst prism fam cliche.</span>
+                                    </a>
+                                </div>
+                                <div className="col-lg-2 col-md-3 col-sm-6 col-6">
+                                    <a href="#" className="mini-box">
+                                        <i>
+                                            <img src="assets/images/work-process-item-01.png" alt="" />
+                                        </i>
+                                        <strong>Discuss</strong>
+                                        <span>Godard pabst prism fam cliche.</span>
+                                    </a>
+                                </div>
+                                <div className="col-lg-2 col-md-3 col-sm-6 col-6">
+                                    <a href="#" className="mini-box">
+                                        <i>
+                                            <img src="assets/images/work-process-item-01.png" alt="" />
+                                        </i>
+                                        <strong>Revise</strong>
+                                        <span>Godard pabst prism fam cliche.</span>
+                                    </a>
+                                </div>
+                                <div className="col-lg-2 col-md-3 col-sm-6 col-6">
+                                    <a href="#" className="mini-box">
+                                        <i>
+                                            <img src="assets/images/work-process-item-01.png" alt="" />
+                                        </i>
+                                        <strong>Approve</strong>
+                                        <span>Godard pabst prism fam cliche.</span>
+                                    </a>
+                                </div>
+                                <div className="col-lg-2 col-md-3 col-sm-6 col-6">
+                                    <a href="#" className="mini-box">
+                                        <i>
+                                            <img src="assets/images/work-process-item-01.png" alt="" />
+                                        </i>
+                                        <strong>Launch</strong>
+                                        <span>Godard pabst prism fam cliche.</span>
+                                    </a>
+                                </div>
+                            </div>
+                            {/* ***** Mini Box End ***** */}
+                        </div>
+                    </div>
+                </section>
+                {/* ***** Home Parallax End ***** */}
+                {/* ***** Testimonials Start ***** */}
+                <section className="section" id="testimonials">
                     <div className="container">
-                        <div className="row">
-                            <div className="col-lg-6 offset-lg-3">
-                                <div className="section-heading wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                                    <h6>Our Services</h6>
-                                    <h2>Discover What We Do &amp; <span>Offer</span> To Our <em>Clients</em></h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="container-fluid">
-                        <div className="row">
-                            <div className="col-lg-4">
-                                <div className="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
-                                    <div className="row">
-                                        <div className="col-lg-4">
-                                            <div className="icon">
-                                                <img src="assets/images/service-icon-01.png" alt=""></img>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-8">
-                                            <div className="right-content">
-                                                <h4>Similar Websites</h4>
-                                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque laudantium.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                                <div className="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
-                                    <div className="row">
-                                        <div className="col-lg-4">
-                                            <div className="icon">
-                                                <img src="assets/images/service-icon-02.png" alt=""></img>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-8">
-                                            <div className="right-content">
-                                                <h4>Website Trends</h4>
-                                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque laudantium.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                                <div className="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-                                    <div className="row">
-                                        <div className="col-lg-4">
-                                            <div className="icon">
-                                                <img src="assets/images/service-icon-03.png" alt=""></img>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-8">
-                                            <div className="right-content">
-                                                <h4>Traffic Analysis</h4>
-                                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque laudantium.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                                <div className="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-                                    <div className="row">
-                                        <div className="col-lg-4">
-                                            <div className="icon">
-                                                <img src="assets/images/service-icon-03.png" alt=""></img>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-8">
-                                            <div className="right-content">
-                                                <h4>Optimizing Keywords</h4>
-                                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque laudantium.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                                <div className="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.7s">
-                                    <div className="row">
-                                        <div className="col-lg-4">
-                                            <div className="icon">
-                                                <img src="assets/images/service-icon-01.png" alt=""></img>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-8">
-                                            <div className="right-content">
-                                                <h4>Page Optimizations</h4>
-                                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque laudantium.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                                <div className="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.8s">
-                                    <div className="row">
-                                        <div className="col-lg-4">
-                                            <div className="icon">
-                                                <img src="assets/images/service-icon-02.png" alt=""></img>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-8">
-                                            <div className="right-content">
-                                                <h4>Deep URL Analysis</h4>
-                                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque laudantium.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="portfolio" className="our-portfolio section">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-5">
-                                <div className="section-heading wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
-                                    <h6>Our Portofolio</h6>
-                                    <h2>Discover Our Recent <em>Projects</em> And <span>Showcases</span></h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="container-fluid wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+                        {/* ***** Section Title Start ***** */}
                         <div className="row">
                             <div className="col-lg-12">
-                                <div className="loop owl-carousel">
-                                    <div className="item">
-                                        <div className="portfolio-item">
-                                            <div className="thumb">
-                                                <img src="assets/images/portfolio-01.jpg" alt=""></img>
-                                                <div className="hover-content">
-                                                    <div className="inner-content">
-                                                        <a href="#"><h4>Awesome Project 101</h4></a>
-                                                        <span>Marketing</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                <div className="center-heading">
+                                    <h2 className="section-title">What do they say?</h2>
+                                </div>
+                            </div>
+                            <div className="offset-lg-3 col-lg-6">
+                                <div className="center-text">
+                                    <p>
+                                        Donec tempus, sem non rutrum imperdiet, lectus orci fringilla
+                                        nulla, at accumsan elit eros a turpis. Ut sagittis lectus libero.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {/* ***** Section Title End ***** */}
+                        <div className="row">
+                            {/* ***** Testimonials Item Start ***** */}
+                            <div className="col-lg-4 col-md-6 col-sm-12">
+                                <div className="team-item">
+                                    <div className="team-content">
+                                        <i>
+                                            <img src="assets/images/testimonial-icon.png" alt="" />
+                                        </i>
+                                        <p>
+                                            Proin a neque nisi. Nam ipsum nisi, venenatis ut nulla quis,
+                                            egestas scelerisque orci. Maecenas a finibus odio.
+                                        </p>
+                                        <div className="user-image">
+                                            <img src="http://placehold.it/60x60" alt="" />
                                         </div>
-                                        <div className="portfolio-item">
-                                            <div className="thumb">
-                                                <img src="assets/images/portfolio-04.jpg" alt=""></img>
-                                                <div className="hover-content">
-                                                    <div className="inner-content">
-                                                        <a href="#"><h4>Awesome Project 102</h4></a>
-                                                        <span>Branding</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="item">
-                                        <div className="portfolio-item">
-                                            <div className="thumb">
-                                                <img src="assets/images/portfolio-02.jpg" alt=""></img>
-                                                <div className="hover-content">
-                                                    <div className="inner-content">
-                                                        <a href="#"><h4>Awesome Project 103</h4></a>
-                                                        <span>Consulting</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="portfolio-item">
-                                            <div className="thumb">
-                                                <img src="assets/images/portfolio-05.jpg" alt=""></img>
-                                                <div className="hover-content">
-                                                    <div className="inner-content">
-                                                        <a href="#"><h4>Awesome Project 104</h4></a>
-                                                        <span>Artwork</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div className="team-info">
+                                            <h3 className="user-name">Catherine Soft</h3>
+                                            <span>Managing Director</span>
                                         </div>
                                     </div>
-                                    <div className="item">
-                                        <div className="portfolio-item">
-                                            <div className="thumb">
-                                                <img src="assets/images/portfolio-03.jpg" alt=""></img>
-                                                <div className="hover-content">
-                                                    <div className="inner-content">
-                                                        <a href="#"><h4>Awesome Project 105</h4></a>
-                                                        <span>Branding</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                </div>
+                            </div>
+                            {/* ***** Testimonials Item End ***** */}
+                            {/* ***** Testimonials Item Start ***** */}
+                            <div className="col-lg-4 col-md-6 col-sm-12">
+                                <div className="team-item">
+                                    <div className="team-content">
+                                        <i>
+                                            <img src="assets/images/testimonial-icon.png" alt="" />
+                                        </i>
+                                        <p>
+                                            Integer molestie aliquam gravida. Nullam nec arcu finibus,
+                                            imperdiet nulla vitae, placerat nibh. Cras maximus venenatis
+                                            molestie.
+                                        </p>
+                                        <div className="user-image">
+                                            <img src="http://placehold.it/60x60" alt="" />
                                         </div>
-                                        <div className="portfolio-item">
-                                            <div className="thumb">
-                                                <img src="assets/images/portfolio-06.jpg" alt=""></img>
-                                                <div className="hover-content">
-                                                    <div className="inner-content">
-                                                        <a href="#"><h4>Awesome Project 106</h4></a>
-                                                        <span>Artwork</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div className="team-info">
+                                            <h3 className="user-name">Kelvin Wood</h3>
+                                            <span>Digital Marketer</span>
                                         </div>
                                     </div>
-                                    <div className="item">
-                                        <div className="portfolio-item">
-                                            <div className="thumb">
-                                                <img src="assets/images/portfolio-04.jpg" alt=""></img>
-                                                <div className="hover-content">
-                                                    <div className="inner-content">
-                                                        <a href="#"><h4>Awesome Project 107</h4></a>
-                                                        <span>Creative</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                </div>
+                            </div>
+                            {/* ***** Testimonials Item End ***** */}
+                            {/* ***** Testimonials Item Start ***** */}
+                            <div className="col-lg-4 col-md-6 col-sm-12">
+                                <div className="team-item">
+                                    <div className="team-content">
+                                        <i>
+                                            <img src="assets/images/testimonial-icon.png" alt="" />
+                                        </i>
+                                        <p>
+                                            Quisque diam odio, maximus ac consectetur eu, auctor non lorem.
+                                            Cras quis est non ante ultrices molestie. Ut vehicula et diam at
+                                            aliquam.
+                                        </p>
+                                        <div className="user-image">
+                                            <img src="http://placehold.it/60x60" alt="" />
                                         </div>
-                                        <div className="portfolio-item">
-                                            <div className="thumb">
-                                                <img src="assets/images/portfolio-01.jpg" alt=""></img>
-                                                <div className="hover-content">
-                                                    <div className="inner-content">
-                                                        <a href="#"><h4>Awesome Project 108</h4></a>
-                                                        <span>Consulting</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div className="team-info">
+                                            <h3 className="user-name">David Martin</h3>
+                                            <span>Website Manager</span>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* ***** Testimonials Item End ***** */}
+                        </div>
+                    </div>
+                </section>
+                {/* ***** Testimonials End ***** */}
+                {/* ***** Pricing Plans Start ***** */}
+                <section className="section colored" id="pricing-plans">
+                    <div className="container">
+                        {/* ***** Section Title Start ***** */}
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <div className="center-heading">
+                                    <h2 className="section-title">Pricing Plans</h2>
+                                </div>
+                            </div>
+                            <div className="offset-lg-3 col-lg-6">
+                                <div className="center-text">
+                                    <p>
+                                        Donec vulputate urna sed rutrum venenatis. Cras consequat magna
+                                        quis arcu elementum, quis congue risus volutpat.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {/* ***** Section Title End ***** */}
+                        <div className="row">
+                            {/* ***** Pricing Item Start ***** */}
+                            <div
+                                className="col-lg-4 col-md-6 col-sm-12"
+                                data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s"
+                            >
+                                <div className="pricing-item">
+                                    <div className="pricing-header">
+                                        <h3 className="pricing-title">Starter</h3>
+                                    </div>
+                                    <div className="pricing-body">
+                                        <div className="price-wrapper">
+                                            <span className="currency">$</span>
+                                            <span className="price">14.50</span>
+                                            <span className="period">monthly</span>
+                                        </div>
+                                        <ul className="list">
+                                            <li className="active">60 GB space</li>
+                                            <li className="active">600 GB transfer</li>
+                                            <li className="active">Pro Design Panel</li>
+                                            <li>15-minute support</li>
+                                            <li>Unlimited Emails</li>
+                                            <li>24/7 Security</li>
+                                        </ul>
+                                    </div>
+                                    <div className="pricing-footer">
+                                        <a href="#" className="main-button">
+                                            Purchase Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* ***** Pricing Item End ***** */}
+                            {/* ***** Pricing Item Start ***** */}
+                            <div
+                                className="col-lg-4 col-md-6 col-sm-12"
+                                data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s"
+                            >
+                                <div className="pricing-item active">
+                                    <div className="pricing-header">
+                                        <h3 className="pricing-title">Premium</h3>
+                                    </div>
+                                    <div className="pricing-body">
+                                        <div className="price-wrapper">
+                                            <span className="currency">$</span>
+                                            <span className="price">21.50</span>
+                                            <span className="period">monthly</span>
+                                        </div>
+                                        <ul className="list">
+                                            <li className="active">120 GB space</li>
+                                            <li className="active">1200 GB transfer</li>
+                                            <li className="active">Pro Design Panel</li>
+                                            <li className="active">15-minute support</li>
+                                            <li>Unlimited Emails</li>
+                                            <li>24/7 Security</li>
+                                        </ul>
+                                    </div>
+                                    <div className="pricing-footer">
+                                        <a href="#" className="main-button">
+                                            Purchase Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* ***** Pricing Item End ***** */}
+                            {/* ***** Pricing Item Start ***** */}
+                            <div
+                                className="col-lg-4 col-md-6 col-sm-12"
+                                data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s"
+                            >
+                                <div className="pricing-item">
+                                    <div className="pricing-header">
+                                        <h3 className="pricing-title">Advanced</h3>
+                                    </div>
+                                    <div className="pricing-body">
+                                        <div className="price-wrapper">
+                                            <span className="currency">$</span>
+                                            <span className="price">42.00</span>
+                                            <span className="period">monthly</span>
+                                        </div>
+                                        <ul className="list">
+                                            <li className="active">250 GB space</li>
+                                            <li className="active">5000 GB transfer</li>
+                                            <li className="active">Pro Design Panel</li>
+                                            <li className="active">15-minute support</li>
+                                            <li className="active">Unlimited Emails</li>
+                                            <li className="active">24/7 Security</li>
+                                        </ul>
+                                    </div>
+                                    <div className="pricing-footer">
+                                        <a href="#" className="main-button">
+                                            Purchase Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* ***** Pricing Item End ***** */}
+                        </div>
+                    </div>
+                </section>
+                {/* ***** Pricing Plans End ***** */}
+                {/* ***** Counter Parallax Start ***** */}
+                <section className="counter">
+                    <div className="content">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-lg-3 col-md-6 col-sm-12">
+                                    <div className="count-item decoration-bottom">
+                                        <strong>126</strong>
+                                        <span>Projects</span>
+                                    </div>
+                                </div>
+                                <div className="col-lg-3 col-md-6 col-sm-12">
+                                    <div className="count-item decoration-top">
+                                        <strong>63</strong>
+                                        <span>Happy Clients</span>
+                                    </div>
+                                </div>
+                                <div className="col-lg-3 col-md-6 col-sm-12">
+                                    <div className="count-item decoration-bottom">
+                                        <strong>18</strong>
+                                        <span>Awards Wins</span>
+                                    </div>
+                                </div>
+                                <div className="col-lg-3 col-md-6 col-sm-12">
+                                    <div className="count-item">
+                                        <strong>27</strong>
+                                        <span>Countries</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div id="contact" className="contact-us section">
+                </section>
+                {/* ***** Counter Parallax End ***** */}
+                {/* ***** Blog Start ***** */}
+                <section className="section" id="blog">
                     <div className="container">
+                        {/* ***** Section Title Start ***** */}
                         <div className="row">
-                            <div className="col-lg-12 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.25s">
-                                <form id="contact" action="" method="post">
-                                    <div className="row">
-                                        <div className="col-lg-6 offset-lg-3">
-                                            <div className="section-heading">
-                                                <h6>Contact Us</h6>
-                                                <h2>Fill Out The Form Below To <span>Get</span> In <em>Touch</em> With Us</h2>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-9">
-                                            <div className="row">
-                                                <div className="col-lg-6">
-                                                    <fieldset>
-                                                        <input type="name" name="name" id="name" placeholder="Name" autoComplete="on" required></input>
-                                                    </fieldset>
-                                                </div>
-                                                <div className="col-lg-6">
-                                                    <fieldset>
-                                                        <input type="surname" name="surname" id="surname" placeholder="Surname" autoComplete="on" required></input>
-                                                    </fieldset>
-                                                </div>
-                                                <div className="col-lg-6">
-                                                    <fieldset>
-                                                        <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required=""></input>
-                                                    </fieldset>
-                                                </div>
-                                                <div className="col-lg-6">
-                                                    <fieldset>
-                                                        <input type="subject" name="subject" id="subject" placeholder="Subject" autoComplete="on"></input>
-                                                    </fieldset>
-                                                </div>
-                                                <div className="col-lg-12">
-                                                    <fieldset>
-                                                        <textarea name="message" type="text" className="form-control" id="message" placeholder="Message" required=""></textarea>
-                                                    </fieldset>
-                                                </div>
-                                                <div className="col-lg-12">
-                                                    <fieldset>
-                                                        <button type="submit" id="form-submit" className="main-button ">Send Message Now</button>
-                                                    </fieldset>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-3">
-                                            <div className="contact-info">
-                                                <ul>
-                                                    <li>
-                                                        <div className="icon">
-                                                            <img src="assets/images/contact-icon-01.png" alt="email icon"></img>
-                                                        </div>
-                                                        <a href="#">info@company.com</a>
-                                                    </li>
-                                                    <li>
-                                                        <div className="icon">
-                                                            <img src="assets/images/contact-icon-02.png" alt="phone"></img>
-                                                        </div>
-                                                        <a href="#">+001-002-0034</a>
-                                                    </li>
-                                                    <li>
-                                                        <div className="icon">
-                                                            <img src="assets/images/contact-icon-03.png" alt="location"></img>
-                                                        </div>
-                                                        <a href="#">26th Street, Digital Villa</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                            <div className="col-lg-12">
+                                <div className="center-heading">
+                                    <h2 className="section-title">Blog Entries</h2>
+                                </div>
+                            </div>
+                            <div className="offset-lg-3 col-lg-6">
+                                <div className="center-text">
+                                    <p>
+                                        Integer molestie aliquam gravida. Nullam nec arcu finibus,
+                                        imperdiet nulla vitae, placerat nibh. Cras maximus venenatis
+                                        molestie.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {/* ***** Section Title End ***** */}
+                        <div className="row">
+                            <div className="col-lg-4 col-md-6 col-sm-12">
+                                <div className="blog-post-thumb">
+                                    <div className="img">
+                                        <img src="assets/images/blog-item-01.png" alt="" />
                                     </div>
-                                </form>
+                                    <div className="blog-content">
+                                        <h3>
+                                            <a href="#">Vivamus ac vehicula dui</a>
+                                        </h3>
+                                        <div className="text">
+                                            Cras aliquet ligula dui, vitae fermentum velit tincidunt id.
+                                            Praesent eu finibus nunc. Nulla in sagittis eros. Aliquam
+                                            egestas augue.
+                                        </div>
+                                        <a href="#" className="main-button">
+                                            Read More
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-lg-4 col-md-6 col-sm-12">
+                                <div className="blog-post-thumb">
+                                    <div className="img">
+                                        <img src="assets/images/blog-item-02.png" alt="" />
+                                    </div>
+                                    <div className="blog-content">
+                                        <h3>
+                                            <a href="#">Phasellus convallis augue</a>
+                                        </h3>
+                                        <div className="text">
+                                            Aliquam commodo ornare nisl, et scelerisque nisl dignissim ac.
+                                            Vestibulum finibus urna ut velit venenatis, vel ultrices sapien
+                                            mattis.
+                                        </div>
+                                        <a href="#" className="main-button">
+                                            Read More
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-lg-4 col-md-6 col-sm-12">
+                                <div className="blog-post-thumb">
+                                    <div className="img">
+                                        <img src="assets/images/blog-item-03.png" alt="" />
+                                    </div>
+                                    <div className="blog-content">
+                                        <h3>
+                                            <a href="#">Nam gravida purus non</a>
+                                        </h3>
+                                        <div className="text">
+                                            Maecenas eu erat vitae dui convallis consequat vel gravida
+                                            nulla. Vestibulum finibus euismod odio, ut tempus enim varius
+                                            eu.
+                                        </div>
+                                        <a href="#" className="main-button">
+                                            Read More
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
+                </section>
+                {/* ***** Blog End ***** */}
+                {/* ***** Contact Us Start ***** */}
+                <section className="section colored" id="contact-us">
+                    <div className="container">
+                        {/* ***** Section Title Start ***** */}
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <div className="center-heading">
+                                    <h2 className="section-title">Talk To Us</h2>
+                                </div>
+                            </div>
+                            <div className="offset-lg-3 col-lg-6">
+                                <div className="center-text">
+                                    <p>
+                                        Maecenas pellentesque ante faucibus lectus vulputate sollicitudin.
+                                        Cras feugiat hendrerit semper.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {/* ***** Section Title End ***** */}
+                        <div className="row">
+                            {/* ***** Contact Text Start ***** */}
+                            <div className="col-lg-4 col-md-6 col-sm-12">
+                                <h5 className="margin-bottom-30">Keep in touch</h5>
+                                <div className="contact-text">
+                                    <p>
+                                        110-220 Quisque diam odio, maximus ac consectetur eu, 10260
+                                        <br />
+                                        auctor non lorem
+                                    </p>
+                                    <p>
+                                        You are NOT allowed to re-distribute Softy Pinko template on any
+                                        template collection websites. Thank you.
+                                    </p>
+                                </div>
+                            </div>
+                            {/* ***** Contact Text End ***** */}
+                            {/* ***** Contact Form Start ***** */}
+                            <div className="col-lg-8 col-md-6 col-sm-12">
+                                <div className="contact-form">
+                                    <form id="contact" action="" method="get">
+                                        <div className="row">
+                                            <div className="col-lg-6 col-md-12 col-sm-12">
+                                                <fieldset>
+                                                    <input
+                                                        name="name"
+                                                        type="text"
+                                                        className="form-control"
+                                                        id="name"
+                                                        placeholder="Full Name"
+                                                        required=""
+                                                    />
+                                                </fieldset>
+                                            </div>
+                                            <div className="col-lg-6 col-md-12 col-sm-12">
+                                                <fieldset>
+                                                    <input
+                                                        name="email"
+                                                        type="email"
+                                                        className="form-control"
+                                                        id="email"
+                                                        placeholder="E-Mail Address"
+                                                        required=""
+                                                    />
+                                                </fieldset>
+                                            </div>
+                                            <div className="col-lg-12">
+                                                <fieldset>
+                                                    <textarea
+                                                        name="message"
+                                                        rows={6}
+                                                        className="form-control"
+                                                        id="message"
+                                                        placeholder="Your Message"
+                                                        required=""
+                                                        defaultValue={""}
+                                                    />
+                                                </fieldset>
+                                            </div>
+                                            <div className="col-lg-12">
+                                                <fieldset>
+                                                    <button
+                                                        type="submit"
+                                                        id="form-submit"
+                                                        className="main-button"
+                                                    >
+                                                        Send Message
+                                                    </button>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            {/* ***** Contact Form End ***** */}
+                        </div>
+                    </div>
+                </section>
+                {/* ***** Contact Us End ***** */}
+                {/* ***** Footer Start ***** */}
                 <footer>
                     <div className="container">
                         <div className="row">
+                            <div className="col-lg-12 col-md-12 col-sm-12">
+                                <ul className="social">
+                                    <li>
+                                        <a href="#">
+                                            <i className="fa fa-facebook" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i className="fa fa-twitter" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i className="fa fa-linkedin" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i className="fa fa-rss" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i className="fa fa-dribbble" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="row">
                             <div className="col-lg-12">
-                                <p>Copyright © 2021 SEO Dream Co., Ltd. All Rights Reserved.
-
-                                    <br></br>Web Designed by <a rel="nofollow" href="https://templatemo.com" title="free CSS templates">TemplateMo</a></p>
+                                <p className="copyright">
+                                    Copyright © 2020 Softy Pinko Company - Design: TemplateMo
+                                </p>
                             </div>
                         </div>
                     </div>
                 </footer>
+            </>
 
-            </main>
 
         </>
     )
