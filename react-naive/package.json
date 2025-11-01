@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +14,8 @@
   "type": "module",
   "devDependencies": {
     "vite": "^6.4.1"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.7.0"
   }
 }
