@@ -14,12 +14,15 @@ export default {
         if (typeof node.type === 'function') {
             const component = node.type
             const element = component({ ...node.props, children: node.children })
-
             return this._createDomElement(element)
         }
         const domElement = document.createElement(node.type)
         Object.keys(node.props).forEach(key => {
-            domElement.setAttribute(key, node.props[key])
+            if (key === 'style' && typeof node.props[key] === 'object') {
+                Object.assign(domElement.style, node.props[key])
+            } else {
+                domElement.setAttribute(key, node.props[key])
+            }
         })
 
         node.children.forEach(child => {

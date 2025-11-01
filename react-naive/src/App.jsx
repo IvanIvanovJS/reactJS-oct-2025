@@ -17,7 +17,7 @@ export default function App() {
                             <li>We have better stack</li>
                             <li>Reach out our best service</li>
                         </ul>
-                        <button style={{ padding: 12 + 'rem', border: '2px solid #000', background: 'lightblue' }}>Contact now</button>
+                        <button style={{ padding: 2 + 'rem', border: '2px solid #000', background: 'lightblue' }}>Contact now</button>
                     </div>
                 </section>
             </article>
