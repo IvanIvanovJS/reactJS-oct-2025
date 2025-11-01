@@ -1,4 +1,5 @@
 
+import App from './app.jsx'
 import React from './react.js'
 import reactDom from './reactDom.js'
 
@@ -8,16 +9,14 @@ import reactDom from './reactDom.js'
 //     React.createElement('H1', { class: 'site-header' }, 'My first React naive app!'),
 //     React.createElement('H2', null, 'Awesome second header'))
 
-const reactElement = (
-    <header>
-        <h1>My first naive JSX react element</h1>
-        <h2>My second JSX header</h2>
-        <div>Test my luck
-            <p>Nested Paragraph</p>
-        </div>
-    </header>
-)
+function Try() {
+    return (
+        <header>
+            <h1>Hello</h1>
+        </header>
+    )
+}
 
 const rootElement = document.getElementById('root')
 
-reactDom.render(reactElement, rootElement)
+reactDom.render(<App />, rootElement)
