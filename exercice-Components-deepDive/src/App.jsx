@@ -10,7 +10,8 @@ import UserManageModal from "./components/overlays/UserManageModal"
 function App() {
 
     const [showActiveModal, setShowActiveModal] = useState(null);
-
+    const [forceRefresh, setForceRefresh] = useState(false)
+    const [user, setUser] = useState(null)
 
     const showActiveModalHandler = (modal) => {
         switch (modal) {
@@ -32,7 +33,9 @@ function App() {
                 break;
         }
     }
-
+    const refreshTable = () => {
+        setForceRefresh(state => !state)
+    }
 
 
     const addSubmitUserHandler = (e) => {
@@ -45,7 +48,8 @@ function App() {
             street,
             streetNumber,
         }
-        userData.createdAt = new Date()
+        userData.createdAt = new Date().toISOString()
+        userData.updatedAt = new Date().toISOString()
 
         fetch('http://localhost:3030/jsonstore/users', {
             method: 'POST',
@@ -54,29 +58,53 @@ function App() {
             },
             body: JSON.stringify(userData)
         })
-
+        refreshTable()
         setShowActiveModal(null)
     }
+
+    const onDetailsClick = async (userId) => {
+
+        try {
+            const res = await fetch(`http://localhost:3030/jsonstore/users/${userId}`)
+            const result = await res.json()
+            setUser(result)
+            setShowActiveModal('details');
+        } catch (err) {
+            alert(err.message)
+        }
+
+    }
+
 
     return (
         <>
             <Header />
+
             <main className="main">
                 <section className="card users-container">
 
                     <Search />
 
-                    <TableData showActiveModalHandler={showActiveModalHandler} />
+                    <TableData
+                        showActiveModalHandler={showActiveModalHandler}
+                        forceRefresh={forceRefresh}
+                        onDetailsClick={onDetailsClick}
+                    />
 
                     <button className="btn-add btn" onClick={() => showActiveModalHandler('create')}>Add new user</button>
+
                     <Pagination />
+
                 </section>
 
                 {showActiveModal === 'create' && <UserManageModal
                     showActiveModalHandler={showActiveModalHandler}
                     onSubmit={addSubmitUserHandler}
                 />}
-                {showActiveModal === 'details' && <UserDetailsModal showActiveModalHandler={showActiveModalHandler} />}
+                {showActiveModal === 'details' && <UserDetailsModal
+                    showActiveModalHandler={showActiveModalHandler}
+                    user={user}
+                />}
 
             </main>
 

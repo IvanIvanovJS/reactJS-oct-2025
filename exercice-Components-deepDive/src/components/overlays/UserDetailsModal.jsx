@@ -1,4 +1,8 @@
-export default function UserDetailsModal({ showActiveModalHandler }) {
+import dateFormatting from "../../utils/dateFormatting";
+
+export default function UserDetailsModal({ showActiveModalHandler, user }) {
+    console.log(user);
+
     return (
         <div className="overlay">
             <div className="backdrop" onClick={() => showActiveModalHandler(null)}></div>
@@ -21,20 +25,20 @@ export default function UserDetailsModal({ showActiveModalHandler }) {
                                 className="image" />
                         </div>
                         <div className="user-details">
-                            <p>User Id: <strong>62bb0c0eda039e2fdccba57b</strong></p>
+                            <p>User Id: <strong>{user._id}</strong></p>
                             <p>
                                 Full Name:
-                                <strong> Peter Johnson </strong>
+                                <strong> {user.firstName} {user.lastName} </strong>
                             </p>
-                            <p>Email: <strong>peter@abv.bg</strong></p>
-                            <p>Phone Number: <strong>0812345678</strong></p>
+                            <p>Email: <strong>{user.email}</strong></p>
+                            <p>Phone Number: <strong>{user.phoneNumber}</strong></p>
                             <p>
                                 Address:
-                                <strong> Bulgaria, Sofia, Aleksandar Malinov 78 </strong>
+                                <strong> {user.address.country}, {user.address.city}, {user.address.street} {user.address.streetNumber} </strong>
                             </p>
 
-                            <p>Created on: <strong>Wednesday, June 28, 2022</strong></p>
-                            <p>Modified on: <strong>Thursday, June 29, 2022</strong></p>
+                            <p>Created on: <strong>{dateFormatting(user.createdAt)}</strong></p>
+                            <p>Modified on: <strong>{dateFormatting(user.updatedAt)}</strong></p>
                         </div>
                     </div>
                 </div>

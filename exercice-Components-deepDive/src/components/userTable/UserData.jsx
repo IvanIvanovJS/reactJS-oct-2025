@@ -1,3 +1,4 @@
+
 import dateFormatting from "../../utils/dateFormatting";
 
 export default function UserData({
@@ -8,8 +9,10 @@ export default function UserData({
     phoneNumber,
     createdAt,
     imageUrl,
-    showActiveModalHandler
+    showActiveModalHandler,
+    onDetailsClick
 }) {
+
     return (
 
         < tr >
@@ -26,7 +29,7 @@ export default function UserData({
             <td>{phoneNumber}</td>
             <td>{dateFormatting(createdAt)}</td>
             <td className="actions">
-                <button className="btn edit-btn" title="Edit" onClick={() => showActiveModalHandler('edit')}>
+                <button className="btn edit-btn" title="Edit" onClick={() => { showActiveModalHandler('edit') }}>
                     <svg
                         aria-hidden="true"
                         focusable="false"
@@ -43,7 +46,10 @@ export default function UserData({
                         ></path>
                     </svg>
                 </button>
-                <button className="btn delete-btn" title="Delete" onClick={() => showActiveModalHandler('delete')}>
+                <button className="btn delete-btn" title="Delete" onClick={() => {
+
+                    showActiveModalHandler('delete');
+                }}>
                     <svg
                         aria-hidden="true"
                         focusable="false"
@@ -60,7 +66,9 @@ export default function UserData({
                         ></path>
                     </svg>
                 </button>
-                <button className="btn info-btn" title="Info" onClick={() => showActiveModalHandler('details')}>
+                <button className="btn info-btn" title="Info" onClick={() => {
+                    onDetailsClick(_id);
+                }}>
                     <svg
                         aria-hidden="true"
                         focusable="false"
