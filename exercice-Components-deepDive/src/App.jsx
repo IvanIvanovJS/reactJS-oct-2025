@@ -33,10 +33,27 @@ function App() {
         }
     }
 
+
+
     const addSubmitUserHandler = (e) => {
         e.preventDefault()
         const formData = new FormData(e.target)
-        const userData = Object.fromEntries(formData)
+        const { country, city, street, streetNumber, ...userData } = Object.fromEntries(formData)
+        userData.address = {
+            country,
+            city,
+            street,
+            streetNumber,
+        }
+        userData.createdAt = new Date()
+
+        fetch('http://localhost:3030/jsonstore/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        })
 
         setShowActiveModal(null)
     }
