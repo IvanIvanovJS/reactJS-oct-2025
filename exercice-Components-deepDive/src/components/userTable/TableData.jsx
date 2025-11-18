@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import UserData from "./UserData";
 
 export default function TableData({
-    showActiveModalHandler,
     forceRefresh,
     onDetailsClick,
-    onDeleteHandler
+    onDeleteHandler,
+    onEditClick
 }) {
     const [showUserData, setShowUserData] = useState([]);
 
@@ -123,9 +123,9 @@ export default function TableData({
                     {showUserData.map(data => <UserData
                         {...data}
                         key={data._id}
-                        showActiveModalHandler={showActiveModalHandler}
                         onDetailsClick={onDetailsClick}
                         onDeleteHandler={onDeleteHandler}
+                        onEditClick={onEditClick}
                     />)}
                 </tbody>
 

@@ -63,17 +63,60 @@ function App() {
         refreshTable()
         setShowActiveModal(null)
     }
-
-    const onDetailsClick = async (userId) => {
-
+    const fetchUserById = async (userId) => {
         try {
             const res = await fetch(`http://localhost:3030/jsonstore/users/${userId}`)
             const result = await res.json()
             setUser(result)
-            setShowActiveModal('details');
+
         } catch (err) {
             alert(err.message)
         }
+    }
+
+
+
+    const onEditClick = async (userId) => {
+        await fetchUserById(userId)
+        setShowActiveModal('edit');
+
+    }
+    const onEditUserHandler = (e, user) => {
+        e.preventDefault()
+        try {
+            const formData = new FormData(e.target)
+            const entries = Object.fromEntries(formData)
+            const updatedUser = {
+                ...user,
+                ...entries,
+                address: {
+                    ...user.address,
+                    country: entries.country,
+                    city: entries.city,
+                    street: entries.street,
+                    streetNumber: entries.streetNumber,
+                },
+                updatedAt: new Date().toISOString(),
+            };
+
+            fetch(`http://localhost:3030/jsonstore/users/${user._id}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(updatedUser)
+            })
+            refreshTable()
+            setShowActiveModal(null)
+        } catch (err) {
+            alert(err.message)
+        }
+
+    }
+
+    const onDetailsClick = async (userId) => {
+        await fetchUserById(userId)
+        setShowActiveModal('details');
 
     }
     const onDeleteHandler = (userId) => {
@@ -103,10 +146,10 @@ function App() {
                     <Search />
 
                     <TableData
-                        showActiveModalHandler={showActiveModalHandler}
                         forceRefresh={forceRefresh}
                         onDetailsClick={onDetailsClick}
                         onDeleteHandler={onDeleteHandler}
+                        onEditClick={onEditClick}
                     />
 
                     <button className="btn-add btn" onClick={() => showActiveModalHandler('create')}>Add new user</button>
@@ -115,9 +158,12 @@ function App() {
 
                 </section>
 
-                {showActiveModal === 'create' && <UserManageModal
+                {['create', 'edit'].includes(showActiveModal) && <UserManageModal
                     showActiveModalHandler={showActiveModalHandler}
                     onSubmit={addSubmitUserHandler}
+                    onEdit={onEditUserHandler}
+                    showActiveModal={showActiveModal}
+                    user={user}
                 />}
                 {showActiveModal === 'details' && <UserDetailsModal
                     showActiveModalHandler={showActiveModalHandler}

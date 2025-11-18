@@ -9,9 +9,9 @@ export default function UserData({
     phoneNumber,
     createdAt,
     imageUrl,
-    showActiveModalHandler,
     onDetailsClick,
-    onDeleteHandler
+    onDeleteHandler,
+    onEditClick
 }) {
 
     return (
@@ -30,7 +30,7 @@ export default function UserData({
             <td>{phoneNumber}</td>
             <td>{dateFormatting(createdAt)}</td>
             <td className="actions">
-                <button className="btn edit-btn" title="Edit" onClick={() => { showActiveModalHandler('edit') }}>
+                <button className="btn edit-btn" title="Edit" onClick={() => { onEditClick(_id) }}>
                     <svg
                         aria-hidden="true"
                         focusable="false"
