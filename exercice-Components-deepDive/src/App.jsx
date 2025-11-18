@@ -5,6 +5,7 @@ import UserDetailsModal from "./components/overlays/UserDetailsModal"
 import Pagination from "./components/Pagination"
 import Search from "./components/userTable/Search"
 import TableData from "./components/userTable/TableData"
+import UserManageModal from "./components/overlays/UserManageModal"
 
 function App() {
 
@@ -13,6 +14,9 @@ function App() {
 
     const showActiveModalHandler = (modal) => {
         switch (modal) {
+            case 'create':
+                setShowActiveModal('create')
+                break;
             case 'details':
                 setShowActiveModal('details')
                 break;
@@ -29,6 +33,14 @@ function App() {
         }
     }
 
+    const addSubmitUserHandler = (e) => {
+        e.preventDefault()
+        const formData = new FormData(e.target)
+        const userData = Object.fromEntries(formData)
+
+        setShowActiveModal(null)
+    }
+
     return (
         <>
             <Header />
@@ -39,11 +51,15 @@ function App() {
 
                     <TableData showActiveModalHandler={showActiveModalHandler} />
 
-                    <button className="btn-add btn">Add new user</button>
+                    <button className="btn-add btn" onClick={() => showActiveModalHandler('create')}>Add new user</button>
                     <Pagination />
                 </section>
 
-                {showActiveModal === 'details' && <UserDetailsModal />}
+                {showActiveModal === 'create' && <UserManageModal
+                    showActiveModalHandler={showActiveModalHandler}
+                    onSubmit={addSubmitUserHandler}
+                />}
+                {showActiveModal === 'details' && <UserDetailsModal showActiveModalHandler={showActiveModalHandler} />}
 
             </main>
 

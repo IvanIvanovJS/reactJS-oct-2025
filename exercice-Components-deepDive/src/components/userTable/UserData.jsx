@@ -8,7 +8,7 @@ export default function UserData({
     phoneNumber,
     createdAt,
     imageUrl,
-
+    showActiveModalHandler
 }) {
     return (
 
@@ -26,7 +26,7 @@ export default function UserData({
             <td>{phoneNumber}</td>
             <td>{dateFormatting(createdAt)}</td>
             <td className="actions">
-                <button className="btn edit-btn" title="Edit" >
+                <button className="btn edit-btn" title="Edit" onClick={() => showActiveModalHandler('edit')}>
                     <svg
                         aria-hidden="true"
                         focusable="false"
@@ -43,7 +43,7 @@ export default function UserData({
                         ></path>
                     </svg>
                 </button>
-                <button className="btn delete-btn" title="Delete">
+                <button className="btn delete-btn" title="Delete" onClick={() => showActiveModalHandler('delete')}>
                     <svg
                         aria-hidden="true"
                         focusable="false"
@@ -60,7 +60,7 @@ export default function UserData({
                         ></path>
                     </svg>
                 </button>
-                <button className="btn info-btn" title="Info" >
+                <button className="btn info-btn" title="Info" onClick={() => showActiveModalHandler('details')}>
                     <svg
                         aria-hidden="true"
                         focusable="false"

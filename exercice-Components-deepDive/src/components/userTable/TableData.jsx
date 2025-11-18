@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import UserData from "./UserData";
 
-export default function TableData() {
+export default function TableData({ showActiveModalHandler }) {
     const [showUserData, setShowUserData] = useState([]);
 
     useEffect(() => {
@@ -114,7 +114,7 @@ export default function TableData() {
                     </tr>
                 </thead>
                 <tbody>
-                    {showUserData.map(data => <UserData key={data._id} {...data} />)}
+                    {showUserData.map(data => <UserData key={data._id} {...data} showActiveModalHandler={showActiveModalHandler} />)}
                 </tbody>
 
             </table>
