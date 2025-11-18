@@ -1,8 +1,6 @@
 import dateFormatting from "../../utils/dateFormatting";
 
 export default function UserDetailsModal({ showActiveModalHandler, user }) {
-    console.log(user);
-
     return (
         <div className="overlay">
             <div className="backdrop" onClick={() => showActiveModalHandler(null)}></div>

@@ -10,7 +10,8 @@ export default function UserData({
     createdAt,
     imageUrl,
     showActiveModalHandler,
-    onDetailsClick
+    onDetailsClick,
+    onDeleteHandler
 }) {
 
     return (
@@ -47,8 +48,7 @@ export default function UserData({
                     </svg>
                 </button>
                 <button className="btn delete-btn" title="Delete" onClick={() => {
-
-                    showActiveModalHandler('delete');
+                    onDeleteHandler(_id)
                 }}>
                     <svg
                         aria-hidden="true"

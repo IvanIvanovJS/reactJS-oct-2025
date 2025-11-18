@@ -4,7 +4,8 @@ import UserData from "./UserData";
 export default function TableData({
     showActiveModalHandler,
     forceRefresh,
-    onDetailsClick
+    onDetailsClick,
+    onDeleteHandler
 }) {
     const [showUserData, setShowUserData] = useState([]);
 
@@ -124,6 +125,7 @@ export default function TableData({
                         key={data._id}
                         showActiveModalHandler={showActiveModalHandler}
                         onDetailsClick={onDetailsClick}
+                        onDeleteHandler={onDeleteHandler}
                     />)}
                 </tbody>
 

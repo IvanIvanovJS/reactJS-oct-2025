@@ -6,12 +6,14 @@ import Pagination from "./components/Pagination"
 import Search from "./components/userTable/Search"
 import TableData from "./components/userTable/TableData"
 import UserManageModal from "./components/overlays/UserManageModal"
+import UserDeleteModal from "./components/overlays/UserDeleteModal"
 
 function App() {
 
     const [showActiveModal, setShowActiveModal] = useState(null);
     const [forceRefresh, setForceRefresh] = useState(false)
     const [user, setUser] = useState(null)
+    const [userId, setUserId] = useState(null)
 
     const showActiveModalHandler = (modal) => {
         switch (modal) {
@@ -74,7 +76,22 @@ function App() {
         }
 
     }
+    const onDeleteHandler = (userId) => {
+        setShowActiveModal('delete')
+        setUserId(userId)
+    }
+    const deleteUserHandler = async (userId) => {
+        try {
 
+            await fetch(`http://localhost:3030/jsonstore/users/${userId}`, {
+                method: 'DELETE'
+            })
+            setShowActiveModal(null)
+            refreshTable()
+        } catch (err) {
+            alert(err.message)
+        }
+    }
 
     return (
         <>
@@ -89,6 +106,7 @@ function App() {
                         showActiveModalHandler={showActiveModalHandler}
                         forceRefresh={forceRefresh}
                         onDetailsClick={onDetailsClick}
+                        onDeleteHandler={onDeleteHandler}
                     />
 
                     <button className="btn-add btn" onClick={() => showActiveModalHandler('create')}>Add new user</button>
@@ -104,6 +122,12 @@ function App() {
                 {showActiveModal === 'details' && <UserDetailsModal
                     showActiveModalHandler={showActiveModalHandler}
                     user={user}
+                />}
+
+                {showActiveModal === 'delete' && <UserDeleteModal
+                    showActiveModalHandler={showActiveModalHandler}
+                    deleteUserHandler={deleteUserHandler}
+                    userId={userId}
                 />}
 
             </main>
