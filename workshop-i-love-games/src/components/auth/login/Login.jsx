@@ -5,10 +5,10 @@ export default function Login() {
             <form id="login">
                 <div className="container">
                     <h1>Login</h1>
-                    <label for="email">Email</label>
+                    <label htmlFor="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Your Email" />
 
-                    <label for="login-pass">Password</label>
+                    <label htmlFor="login-pass">Password</label>
                     <input type="password" id="login-password" name="password" placeholder="Password" />
                     <input type="submit" className="btn submit" value="Login" />
                 </div>
