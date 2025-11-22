@@ -2,8 +2,22 @@ export default function Register() {
 
     const submitHandler = (formData) => {
         const { email, password, repassword } = Object.fromEntries(formData);
-        console.log(email, password, repassword);
+        if (!email) {
+            return alert('Email is required!')
+        }
+        if (!password) {
+            return alert('Password is required!')
+        }
+        if (email.length < 3) {
+            return alert('Email must be at least 3 characters long!')
+        }
+        if (password.length < 3) {
+            return alert('Password must be at least 3 characters long!')
+        }
 
+        if (repassword !== password) {
+            return alert('Passwords does not match!')
+        }
     }
 
     return (
