@@ -5,9 +5,9 @@ export default function Hero() {
     const [games, setGames] = useState([]);
     useEffect(() => {
         const controller = new AbortController()
-        try {
 
-            async function getGames() {
+        async function getGames() {
+            try {
                 const res = await fetch('http://localhost:3030/jsonstore/games',
                     { signal: controller.signal }
                 )
@@ -23,12 +23,13 @@ export default function Hero() {
                 const sortedGames = games.sort((a, b) => b._createdOn - a._createdOn).slice(0, 3)
 
                 setGames(sortedGames)
+            } catch (err) {
+                if (err.name === "AbortError") return; // игнорирай
+                alert(err.message)
             }
 
-            getGames()
-        } catch (err) {
-            alert(err.message)
         }
+        getGames()
 
         return () => controller.abort();
     }, [])

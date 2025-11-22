@@ -6,9 +6,9 @@ export default function Catalog() {
 
     useEffect(() => {
         const controller = new AbortController()
-        try {
 
-            async function getGames() {
+        async function getGames() {
+            try {
                 const res = await fetch('http://localhost:3030/jsonstore/games',
                     { signal: controller.signal }
                 )
@@ -22,12 +22,13 @@ export default function Catalog() {
                 }))
 
                 setGames(games)
+            } catch (err) {
+                if (err.name === "AbortError") return;
+                alert(err.message)
             }
-
-            getGames()
-        } catch (err) {
-            alert(err.message)
         }
+
+        getGames()
 
         return () => controller.abort();
     }, [])
