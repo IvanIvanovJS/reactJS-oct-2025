@@ -4,6 +4,7 @@ import Header from "./components/layout/header/Header"
 import Hero from "./components/home/Hero"
 import Catalog from "./components/catalog/Catalog"
 import Details from "./components/catalog/details/Details"
+import Login from "./components/auth/login/Login"
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/games" element={<Catalog />} />
         <Route path="/games/:gameId/details" element={<Details />} />
+        <Route path="/auth/login" element={<Login />} />
       </Routes>
 
       <Footer />
