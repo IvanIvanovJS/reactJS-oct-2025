@@ -1,4 +1,8 @@
-export default function Register() {
+
+export default function Register({
+    user,
+    register
+}) {
 
     const submitHandler = (formData) => {
         const { email, password, repassword } = Object.fromEntries(formData);
@@ -18,7 +22,11 @@ export default function Register() {
         if (repassword !== password) {
             return alert('Passwords does not match!')
         }
+
+        return register(email)
+
     }
+
 
     return (
         <section id="register-page" className="content auth">
