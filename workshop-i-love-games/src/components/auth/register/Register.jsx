@@ -1,6 +1,5 @@
 
 export default function Register({
-    user,
     register
 }) {
 

@@ -15,7 +15,7 @@ export default function Header({
 
                 {user ?
                     <div id="user">
-                        <Link to="/add-game">Add Game</Link>
+                        <Link to="/games/add-game">Add Game</Link>
                         <Link to="/" onClick={logout}>Logout</Link>
                     </div>
                     :
