@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router"
+import { Link, useParams } from "react-router"
 
 export default function Details() {
 
@@ -63,7 +63,7 @@ export default function Details() {
 
                 {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
                 <div className="buttons">
-                    <a href="#" className="button">Edit</a>
+                    <Link to={`/games/${gameId}/edit`} className="button">Edit</Link>
                     <a href="#" className="button">Delete</a>
                 </div>
 

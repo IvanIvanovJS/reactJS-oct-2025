@@ -8,6 +8,7 @@ import Login from "./components/auth/login/Login"
 import Register from "./components/auth/register/Register"
 import { useState } from "react"
 import AddGame from "./components/catalog/addGame/addGame"
+import EditGame from "./components/catalog/edit/EditGame"
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/games" element={<Catalog />} />
         <Route path="/games/:gameId/details" element={<Details />} />
+        <Route path="/games/:gameId/edit" element={<EditGame />} />
         <Route path="/games/add-game" element={<AddGame />} />
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/register" element={<Register user={user} register={register} />} />
