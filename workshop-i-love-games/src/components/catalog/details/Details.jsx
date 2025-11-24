@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router"
+import CreateComment from "./createComment/CreateComment"
 
 export default function Details() {
 
     const { gameId } = useParams()
     const [game, setGame] = useState({})
+    const [comments, setComments] = useState([])
 
     useEffect(() => {
         async function getGameById() {
@@ -25,6 +27,32 @@ export default function Details() {
         }
         getGameById()
     }, [gameId])
+
+    useEffect(() => {
+        const controller = new AbortController()
+
+
+        async function getComments() {
+            try {
+                const res = await fetch(`http://localhost:3030/jsonstore/comments?where=gameId%3D%22${gameId}%22`, {
+                    signal: controller.signal
+                })
+                const data = await res.json()
+                setComments(Object.values(data))
+
+            } catch (error) {
+                if (error.name === 'AbortController') return;
+                return alert(error.message)
+            }
+        }
+
+        getComments()
+
+
+        return () => controller.abort()
+    }, [gameId])
+
+
 
     return (
         <section id="game-details">
@@ -70,12 +98,11 @@ export default function Details() {
                 <div className="details-comments">
                     <h2>Comments:</h2>
                     <ul>
-                        <li className="comment">
-                            <p>Content: A masterpiece of world design, though the boss fights are brutal.</p>
-                        </li>
-                        <li className="comment">
-                            <p>Content: Truly feels like a next-gen evolution of the Souls formula!</p>
-                        </li>
+                        {comments.map(comment => (
+                            <li key={comment._id} className="comment">
+                                <p>{comment.comment}</p>
+                            </li>
+                        ))}
                     </ul>
                     {/* <!-- Display paragraph: If there are no games in the database -->
                     <!-- <p className="no-comment">No comments.</p> --> */}
@@ -83,13 +110,9 @@ export default function Details() {
 
             </div>
             {/* <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) --> */}
-            <article className="create-comment">
-                <label>Add new comment:</label>
-                <form className="form">
-                    <textarea name="comment" placeholder="Comment......"></textarea>
-                    <input className="btn submit" type="submit" value="Add Comment" />
-                </form>
-            </article>
+
+            <CreateComment gameId={gameId} />
+
         </section>
     )
 }
