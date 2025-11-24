@@ -8,9 +8,23 @@ export default function Details() {
     const [game, setGame] = useState({})
     const [comments, setComments] = useState([])
 
+    async function getComments() {
+        try {
+            const res = await fetch(`http://localhost:3030/jsonstore/comments?where=gameId%3D%22${gameId}%22`)
+            const data = await res.json()
+            setComments(Object.values(data))
+
+        } catch (error) {
+            if (error.name === 'AbortError') return;
+            return alert(error.message)
+        }
+    }
+
+
     useEffect(() => {
+        const controller = new AbortController()
         async function getGameById() {
-            const controller = new AbortController()
+
             try {
                 const res = await fetch(`http://localhost:3030/jsonstore/games/${gameId}`,
                     { signal: controller.signal }
@@ -19,38 +33,22 @@ export default function Details() {
                 const data = await res.json()
 
                 setGame(data)
+
+                await getComments()
+
             } catch (err) {
                 alert(err.message)
             }
 
-            return () => controller.abort()
         }
+
         getGameById()
-    }, [gameId])
-
-    useEffect(() => {
-        const controller = new AbortController()
-
-
-        async function getComments() {
-            try {
-                const res = await fetch(`http://localhost:3030/jsonstore/comments?where=gameId%3D%22${gameId}%22`, {
-                    signal: controller.signal
-                })
-                const data = await res.json()
-                setComments(Object.values(data))
-
-            } catch (error) {
-                if (error.name === 'AbortController') return;
-                return alert(error.message)
-            }
-        }
-
-        getComments()
-
 
         return () => controller.abort()
     }, [gameId])
+
+
+
 
 
 
@@ -104,14 +102,14 @@ export default function Details() {
                             </li>
                         ))}
                     </ul>
-                    {/* <!-- Display paragraph: If there are no games in the database -->
-                    <!-- <p className="no-comment">No comments.</p> --> */}
+                    {/* <!-- Display paragraph: If there are no games in the database -->*/}
+                    {comments.map === 0 && <p className="no-comment">No comments.</p>}
                 </div>
 
             </div>
             {/* <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) --> */}
 
-            <CreateComment gameId={gameId} />
+            <CreateComment gameId={gameId} getComments={getComments} />
 
         </section>
     )

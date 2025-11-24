@@ -2,6 +2,7 @@ import { useState } from "react"
 
 export default function CreateComment({
     gameId,
+    getComments
 }) {
     const [commentInfo, setCommentInfo] = useState({
         gameId: gameId,
@@ -23,6 +24,12 @@ export default function CreateComment({
         } catch (error) {
             return alert(error.message)
         }
+
+        setCommentInfo(state => ({
+            ...state,
+            comment: ''
+        }))
+        getComments()
     }
 
 

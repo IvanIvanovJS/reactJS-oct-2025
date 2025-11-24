@@ -30,6 +30,7 @@ export default function EditGame() {
 
                 setValues(data)
             } catch (err) {
+                if (err.name === 'AbortError') return;
                 alert(err.message)
             }
         }
@@ -54,6 +55,7 @@ export default function EditGame() {
 
             })
         } catch (error) {
+
             return alert(error.message)
         }
         navigate(`/games`)
